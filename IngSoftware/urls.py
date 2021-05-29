@@ -18,19 +18,31 @@ from django.urls import path
 from app.views import MedicoView, LoginFormView
 from django.conf import settings
 from django.conf.urls.static import static
+
+from app.api import medico_api_view
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path(
+        'admin/',
+        admin.site.urls
+    ),
     #URL PRINCIPAL
     path(
-        route='',
+        route='index/',
         view=MedicoView.as_view(),
         name='index'
     ),
     path(
-        route='login/',
+        route='',
         view=LoginFormView.as_view(),
-        name='login'),
+        name='login'
+    ),
+    path(
+        'consulta/<int:pk>',
+        medico_api_view,
+        name='consulta'
+        ),
     ]
+
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

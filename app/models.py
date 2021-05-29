@@ -3,6 +3,8 @@ from django.db import models as m
 class Medico(m.Model):
     id = m.CharField(max_length=50, primary_key=True)
     nombre = m.CharField(max_length=50)
+    passwor = m.CharField(max_length=100, blank=False)
+
 
 
     class Meta:

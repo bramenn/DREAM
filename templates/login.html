@@ -1,9 +1,75 @@
+{% load static %}
 <html>
 	<head>
-		<title>Prueba</title>
+		<title>Login DREAM</title>
+		<meta charset="UTF-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Custom CSS -->
+    	<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    	<link rel="stylesheet" type="text/css" href="{% static 'css/style_per.css' %}">
 	</head>
 
 	<body>
-		<h1>PRUEBA</h1>
+		
+
+		<div class="login" id="app">
+			<div class="titulo">Inicio de sesion DREAM</div>
+			
+			<form method="POST" action="{% url "login" %}">
+                <input type="hidden" name="next" value="{{ next }}">
+                {% csrf_token %}
+                <div class="imge">
+                	<img src="{% static 'images/icono_login.png' %} ">
+                </div>
+                <div class="box">
+                	<strong>ID medico:</strong>
+                	<input type="text" placeholder="ID MEDICOS" v-model="id_medico" required>
+                </div>
+                
+                <div class="box">
+                	<strong>Contraseña:</strong>
+                	<input type="password" placeholder="PASSWORD" v-model="password" required>
+                </div>
+                <div class="box_btn">
+                	<button @click="login()" type="button">Ingresar</button>
+                </div>
+                
+            </form>
+            
+            
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script type="text/javascript">
+			let v = new Vue({
+						el:'#app',
+						delimiters: ['{*','*}'],
+						data:() => ({
+						    id_medico: "",
+						    password: ""
+						  }),
+						methods:{
+							login() {
+								let self = this;
+						      	axios.get('/consulta/' + this.id_medico)
+							      .then(function(response){
+							      	if(self.id_medico == response.data.id & self.password == response.data.passwor){
+							      		alert("Bienvenido " + response.data.nombre);
+							      		window.location="/index/";
+							      	}else{
+							      		alert("ID o contraseña incorrecta ")
+							      	}
+							      		
+							      })
+							      .catch(function(error){
+							      	console.log(error)
+							      })
+						    }
+						},
+			});
+		</script>
+		<script type="text/javascript" src="css3-mediaqueries.js"></script>
+		<script src="{% static 'js/main_pre.js' %}"></script>
 	</body>
 </html>
