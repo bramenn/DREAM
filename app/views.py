@@ -1,21 +1,18 @@
-from django.db.models import Q
+
 from django.shortcuts import render
 from django.views.generic import TemplateView, CreateView
 from app.models import Medico
-from django.http import HttpResponse 
-from IngSoftware import settings
+from django.http import HttpResponse
 
 
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 from django.contrib.auth import login, authenticate
 from django.views.generic import CreateView, TemplateView
-from .models import Medico
 from .forms import SignUpForm
 
 from rest_framework import serializers
-from rest_framework.generics import ListAPIView
 
-from django.contrib.auth.views import LoginView, LogoutView 
+from django.contrib.auth.views import LoginView, LogoutView
 
 class SignOutView(LogoutView):
     pass
