@@ -1,11 +1,10 @@
 html, body {
-    height: 100%;
     background: #292f35;
 }
 
 /* Para 600px */  
 @media only screen and (max-width: 3000px) and (min-width: 901px) {  
-		.login{
+	.login{
 	background: #fff;
 	padding:  3%;
 	margin: 2% 13% 0 20%;
@@ -18,55 +17,59 @@ html, body {
 	flex-direction: column;
 
 
+	}
+	.caja{
+	display:  flex;
+	flex-wrap: wrap ;
 }
-.login .titulo{
-	padding: 5%;
-	display: flex;
-	justify-content: center;
-	font-size: 30px;
-	font-family: Verdana;
-}
-.login .box{
-	font-size: 25px;
-	background-color: #fff;
-	margin: 2%;
-	padding: 2%;
-	border: 5px solid gray; 
-	border-radius: 2em;
-}
+	.login .titulo{
+		padding: 5%;
+		display: flex;
+		justify-content: center;
+		font-size: 30px;
+		font-family: Verdana;
+	}
+	label{
+		font-size: 20px;
+		background-color: #fff;
+		margin: 4%;
+		padding: 2%;
+	}
 
-.login .imge{
-	
-	background-color: #fff;
-	display: flex;
-	justify-content: center;
-}
+	.login .imge{
+		padding: 0 0;
+		margin-top: 3%;
+		background-color: #fff;
+		display: flex;
+		justify-content: center;
+	}
 
-input{
-	border: 0;
-	font: inherit;
-  	padding: 0.2em 0.5em;
-}
+	input{
 
-img{
-	border: 2px solid gray;
-	border-radius: 2em;
-	 width: 25%;
-	 height: 25%;
-}
-.box_btn{
-	display: flex;
-	justify-content: center;
-}
-button{
-	padding: 2%;
-	color: #fff;
-	background: #638cb5;
-	font-family: Verdana;
-	font-size: 18px;
-	border-radius: 20px;
-	width: 50%;
-}
+		font: inherit;
+		margin: 2%;
+		margin-left: 6%;
+	}
+
+	img{
+		border: 2px solid gray;
+		border-radius: 2em;
+		width: 55%;
+		height: 90%;
+	}
+	.box_btn{
+		display: flex;
+		justify-content: center;
+	}
+	.btn{
+		padding: 4%;
+		color: #fff;
+		background: #638cb5;
+		font-family: Verdana;
+		font-size: 18px;
+		border-radius: 20px;
+		width: 50%;
+	}
   
 }  
 
@@ -93,13 +96,6 @@ button{
 	font-size: 30px;
 	font-family: Verdana;
 }
-.login .box{
-	background-color: #fff;
-	margin: 5%;
-	padding: 5%;
-	border: 5px solid gray; 
-	border-radius: 2em;
-}
 
 .login .imge{
 	
@@ -109,24 +105,33 @@ button{
 	display: flex;
 	justify-content: center;
 }
-
+.caja{
+	display:  flex;
+	flex-wrap: wrap ;
+}
+label{
+		font-size: 20px;
+		background-color: #fff;
+		margin: 4%;
+		padding: 2%;
+	}
 input{
-	border: 0;
 	font: inherit;
-  	padding: 0.2em 0.5em;
+	margin: 2%;
+	margin-left: 6%;
 }
 
 img{
 	border: 2px solid gray;
-	border-radius: 2em;
-	 width: 40%;
-	 height: 40%;
+		border-radius: 2em;
+		width: 40%;
+		height: 95%;
 }
 .box_btn{
 	display: flex;
 	justify-content: center;
 }
-button{
+.btn{
 	padding: 2%;
 	color: #fff;
 	background: #638cb5;
@@ -161,15 +166,14 @@ button{
 	font-size: 30px;
 	font-family: Verdana;
 }
-.login .box{
-	background-color: #fff;
-	margin: 5%;
-	padding: 5%;
-	border: 5px solid gray; 
-	border-radius: 2em;
 
-	font-size: 22px;
-}
+label{
+		font-size: 20px;
+		background-color: #fff;
+		margin: 4%;
+		padding: 2%;
+	}
+
 
 .login .imge{
 	
@@ -179,24 +183,27 @@ button{
 	display: flex;
 	justify-content: center;
 }
-
+.caja{
+	display:  flex;
+	flex-wrap: wrap ;
+}
 input{
-	border: 0;
 	font: inherit;
-  	padding: 0.2em 0.5em;
+	margin: 2%;
+	margin-left: 6%;
 }
 
 img{
 	border: 2px solid gray;
 	border-radius: 2em;
 	 width: 40%;
-	 height: 40%;
+	 height: 70%;
 }
 .box_btn{
 	display: flex;
 	justify-content: center;
 }
-button{
+.btn{
 	padding: 5%;
 	color: #fff;
 	background: #638cb5;
@@ -233,15 +240,12 @@ button{
 	margin-bottom: 10%;
 	display: flex;
 	justify-content: center;
-	font-size: 21px;
+	font-size: 30px;
 	font-family: Verdana;
 }
-.login .box{
-	background-color: #fff;
-	margin: 3%;
-	padding: 3%;
-	border: 5px solid gray; 
-	border-radius: 2em;
+.caja{
+	display:  flex;
+	flex-wrap: wrap ;
 }
 
 .login .imge{
@@ -250,22 +254,27 @@ button{
 	display: flex;
 	justify-content: center;
 }
-
+label{
+		font-size: 22px;
+		background-color: #fff;
+		margin: 4%;
+		padding: 2%;
+	}
 input{
-	border: 0;
 	font: inherit;
-  	padding: 0.2em 0.5em;
+	margin: 2%;
+	margin-left: 6%;
 }
 
 img{
 	 width: 55%;
-	 height: 55%;
+	 height: 75%;
 }
 .box_btn{
 	display: flex;
 	justify-content: center;
 }
-button{
+.btn{
 	padding: 5%;
 	color: #fff;
 	background: #638cb5;

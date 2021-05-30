@@ -15,27 +15,25 @@
 
 		<div class="login" id="app">
 			<div class="titulo">Inicio de sesion DREAM</div>
-			
-			<form method="POST" action="{% url "login" %}">
-                <input type="hidden" name="next" value="{{ next }}">
-                {% csrf_token %}
-                <div class="imge">
+
+			<form method="POST">
+				{% csrf_token %}
+				<div class="login">
+					<div class="imge">
                 	<img src="{% static 'images/icono_login.png' %} ">
-                </div>
-                <div class="box">
-                	<strong>ID medico:</strong>
-                	<input type="text" placeholder="ID MEDICOS" v-model="id_medico" required>
-                </div>
+	                </div>
+	                <div class="caja">
+	                	{{ form.as_p }}
+	                </div>
+			        
+			        
+			        <div class="box_btn">
+	                	<input type="submit" name="submit" class="btn">
+	                </div>
+				</div>
                 
-                <div class="box">
-                	<strong>Contraseña:</strong>
-                	<input type="password" placeholder="PASSWORD" v-model="password" required>
-                </div>
-                <div class="box_btn">
-                	<button @click="login()" type="button">Ingresar</button>
-                </div>
-                
-            </form>
+		    </form>
+			
             
             
 		</div>
