@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app.views import MedicoView, LoginFormView
+from app.views import MedicoView, SignInView, SignOutView, SignUpView
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -27,21 +27,20 @@ urlpatterns = [
     ),
     #URL PRINCIPAL
     path(
-        route='index/',
+        route='',
         view=MedicoView.as_view(),
         name='index'
-    ),
-    path(
-        route='',
-        view=LoginFormView.as_view(),
-        name='login'
     ),
     path(
         'consulta/<int:pk>',
         medico_api_view,
         name='consulta'
         ),
+    path('registrate/', SignUpView.as_view(), name='sign_up'),
+    path('incia-sesion/', SignInView.as_view(), name='sign_in'),
+    path('cerrar-sesion/', SignOutView.as_view(), name='sign_out'),
     ]
+
 
 
 if settings.DEBUG:

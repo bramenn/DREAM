@@ -2,8 +2,7 @@ from django.contrib import admin
 from app.models import Medico, Mamography
 class MedicoAdmin(admin.ModelAdmin):
     list_display = (
-        'id',
-        'nombre',
+        'usuario',
     ) 
 
 class MamoAdmin(admin.ModelAdmin):

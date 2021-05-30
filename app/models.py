@@ -1,19 +1,33 @@
 from django.db import models as m
 
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+
+
 class Medico(m.Model):
-    id = m.CharField(max_length=50, primary_key=True)
-    nombre = m.CharField(max_length=50)
+    usuario = m.OneToOneField(User, on_delete=m.CASCADE)
     passwor = m.CharField(max_length=100, blank=False)
 
 
 
     class Meta:
-        ordering  = ["id"]
+        ordering  = ["usuario"]
         verbose_name = "Medico"
         verbose_name_plural = "Medicos"
 
     def __str__(self):
-        return self.nombre
+        return self.nombre.usuario.username
+
+@receiver(post_save, sender=User)
+def crear_usuario_perfil(sender, instance, created, **kwargs):
+    if created:
+        Medico.objects.create(usuario=instance)
+
+@receiver(post_save, sender=User)
+def guardar_usuario_perfil(sender, instance, **kwargs):
+    instance.medico.save()
 
 class Mamography(m.Model):
     imagen = m.FileField(upload_to="mamografias", null=True)

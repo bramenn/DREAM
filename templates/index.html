@@ -55,8 +55,15 @@
 					</div>
 				</div>
 				<div class="col-lg-6">
-					<div class="wel-nots">
-						<p>Bienvendio a DREAM</p>
+					<div class="new-btn-d br-2">
+						{% if user.is_authenticated %}
+					        <h1 style="color: #fff;">Hola {{ user.username }}</h1>
+					        <a style="color: #fff;" href="{% url 'sign_out' %}"><strong>Cerrar sesión</strong></a>
+					    {% else %}
+					        <a style="color: #fff;" href="{% url 'sign_up' %}"><strong>Registrate</strong></a>
+					        --
+					        <a style="color: #fff;" href="{% url 'sign_in' %}"><strong>Iniciar sesión</strong></a>
+					    {% endif %}
 					</div>
 				</div>
 			</div>
