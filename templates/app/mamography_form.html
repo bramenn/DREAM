@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title>Subir mamografia</title>
+	</head>
+	<body>
+		SUBIR MAMOGRAFIA
+		<form method="POST">
+    	{% csrf_token %}
+			{{form.as_p }}
+			<div class="box_btn">
+	            <input type="submit" name="submit" class="btn">
+	        </div>
+		</form>
+		
+		
+	</body>
+</html>

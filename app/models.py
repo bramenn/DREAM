@@ -30,8 +30,8 @@ def guardar_usuario_perfil(sender, instance, **kwargs):
     instance.medico.save()
 
 class Mamography(m.Model):
-    imagen = m.FileField(upload_to="mamografias", null=True)
-    birad = m.CharField(verbose_name="tipo de cancer", max_length=50)
+    imagen = m.ImageField(upload_to="mamografias", null=True)
+    birad = m.CharField(verbose_name="tipo de cancer", max_length=50, blank=True)
 
     class Meta:
         ordering = ["birad"]
