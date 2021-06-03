@@ -30,7 +30,7 @@
     <meta property="og:url" content="index.html">
   </head>
   <body class="u-body"><header class="u-clearfix u-header u-header" id="sec-2562"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="1429" data-image-height="1000">
+        <a href="{% url 'index' %}" class="u-image u-logo u-image-1" data-image-width="1429" data-image-height="1000">
           <img src="{% static 'images/607915407-0.jpeg' %}" class="u-logo-image u-logo-image-1" data-image-width="144">
         </a>
         <nav data-position="" class="u-align-right u-menu u-menu-dropdown u-offcanvas u-menu-1">
@@ -115,14 +115,6 @@
         </div>
       </div>
     </section>
-    
-    <form method="POST" enctype="multipart/form-data">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <div class="box_btn">
-              <input type="submit" name="submit" class="btn">
-          </div>
-    </form>
     
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-d084"><div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-small-text u-text u-text-variant u-text-1">Ingenieria de software 3<br>2021-1

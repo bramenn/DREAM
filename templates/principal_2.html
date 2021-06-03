@@ -31,7 +31,7 @@
     <meta property="og:url" content="index.html">
   </head>
   <body class="u-body"><header class="u-clearfix u-header u-header" id="sec-2562"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="1429" data-image-height="1000">
+        <a href="{% url 'index' %}" class="u-image u-logo u-image-1" data-image-width="1429" data-image-height="1000">
           <img src="{% static 'images/607915407-0.jpeg' %}" class="u-logo-image u-logo-image-1" data-image-width="144">
         </a>
         <nav data-position="" class="u-align-right u-menu u-menu-dropdown u-offcanvas u-menu-1">
@@ -52,7 +52,7 @@
                 <a class="u-button-style u-nav-link" href="{% url 'perfil' %}" style="padding: 10px;">Perfil</a>
               </li>
               <li class="u-nav-item">
-                <a class="u-button-style u-nav-link" href="{%  url url 'upload' %}" style="padding: 10px;">Subir mamo</a>
+                <a class="u-button-style u-nav-link" href="{%  url 'upload' %}" style="padding: 10px;">Subir mamo</a>
               </li>
             </ul>
           </div>
@@ -67,7 +67,7 @@
                     <a class="u-button-style u-nav-link" href="{% url 'perfil' %}" style="padding: 10px;">Perfil</a>
                   </li>
                   <li class="u-nav-item">
-                    <a class="u-button-style u-nav-link" href="{%  url url 'upload' %}" style="padding: 10px;">Subir mamo</a>
+                    <a class="u-button-style u-nav-link" href="{%  url 'upload' %}" style="padding: 10px;">Subir mamo</a>
                   </li>
                 </ul>
 
@@ -95,8 +95,8 @@
             <h2 class="u-custom-font u-text u-text-font u-text-1">Analisis de imagen</h2>
             <h2 class="u-custom-font u-text u-text-2">Mamo<span style="font-size: 3.75rem;"></span>grafia 
             </h2>
-            <p class="u-text u-text-3">Tenemos un algoritmo que ayuda a los medicos a interpretar mamografias y sugerir el estado de peson.</p>
-            <a href="{% url 'upload' %}" class="u-btn u-btn-rectangle u-button-style u-text-palette-1-base u-white u-btn-1">leer mas</a>
+            <p class="u-text u-text-3"><strong>Tenemos un algoritmo que ayuda a los médicos a interpretar mamografías y sugerir tratamientos respectivos.</strong></p>
+            <p class="u-text u-text-3">Este sistema de procesamiento de imágenes usa una Red Neuronal Convolucional para clasificar las mamografías en la escala BIRADS del 0 al 6. Se utilizan librerias para usar inteligencia artificial como tensorflow, numpy y pandas.</p>
           </div>
         </div>
       </div>
